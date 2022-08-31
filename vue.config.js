@@ -7,4 +7,4 @@ module.exports = {
         disableHostCheck: true,
         proxy: 'http://localhost:8080'
     }
-  };
+}
