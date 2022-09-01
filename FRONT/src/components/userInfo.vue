@@ -11,16 +11,16 @@
 import axios from 'axios'
 
 export default {
-  name: 'ApiTest1',
+  name: 'userInfo',
   data () {
     return {
-      msg: 'ApiTest Part',
+      msg: 'User Information Data',
       apiresult: '대기 중'
     }
   },
   methods: {
     async apievent () {
-      const {data} = await axios.get('http://localhost:3010/api/getTest1?age=25&gender=여')
+      const {data} = await axios.get('http://localhost:3010/api/PostgreDataTest1/userInfo')
       console.log(data)
       this.apiresult = data
     }
