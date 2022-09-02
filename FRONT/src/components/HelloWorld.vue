@@ -25,6 +25,12 @@
          >
            JoinTest
         </a>
+    <h2>Visual Data Link</h2>
+      <a href="/#/Visual"
+         target="_blank"
+         >
+           Visual
+        </a>
   </div>
 </template>
 

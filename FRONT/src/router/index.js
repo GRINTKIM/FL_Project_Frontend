@@ -5,6 +5,7 @@ import ApiTest1 from '@/components/ApiTest1'
 import userInfo from '@/components/userInfo'
 import Tutorial from '@/components/Tutorial'
 import JoinTest from '@/components/JoinTest'
+import Visual from '@/components/Visual'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/JoinTest',
       name: 'JoinTest',
       component: JoinTest
+    },
+    {
+      path: '/Visual',
+      name: 'Visual',
+      component: Visual
     }
   ]
 })
