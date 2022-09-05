@@ -6,6 +6,7 @@ import userInfo from '@/components/userInfo'
 import Tutorial from '@/components/Tutorial'
 import JoinTest from '@/components/JoinTest'
 import Visual from '@/components/Visual'
+import PythonImg from '@/components/PythonImg'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/Visual',
       name: 'Visual',
       component: Visual
+    },
+    {
+      path: '/PythonImg',
+      name: 'PythonImg',
+      component: PythonImg
     }
   ]
 })

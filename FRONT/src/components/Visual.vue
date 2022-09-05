@@ -50,10 +50,16 @@ export default {
   methods: {
     async apievent () {
       let compselected = {comp: this.selected}
-      console.log(compselected)
-      const {data} = await axios.post('http://localhost:3010/api/Visual/comp/', compselected)
-      console.log(data)
-      this.apiresult = data
+      console.log('Selected COMP_ID is ', this.selected)
+      if (this.selected != null) {
+        const {data} = await axios.post('http://localhost:3010/api/Visual/comp/', compselected)
+        this.apiresult = data
+      } else {
+        this.apiresult = 'Please select COMP_ID to satisfy WHERE clause.'
+      }
+      // const {data} = await axios.post('http://localhost:3010/api/Visual/comp/', compselected)
+      // // console.log(data)
+      // this.apiresult = data
     }
   }
 }

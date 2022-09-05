@@ -31,6 +31,12 @@
          >
            Visual
         </a>
+    <h2>Digit Image Upload & Inference</h2>
+      <a href="/#/PythonImg"
+         target="_blank"
+         >
+           PythonImg
+        </a>
   </div>
 </template>
 
