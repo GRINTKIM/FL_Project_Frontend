@@ -20,6 +20,9 @@
       <h1>{{ msg }}</h1>
         <b-form-select v-model="selected" :options="options"></b-form-select>
         <button @click.stop="apievent">요청</button>
+        <div class="container">
+          <Bar v-if="loaded==true" :chart-data="chartData" />
+        </div>
         <div class="mt-3">Selected: <strong>{{ selected }}</strong></div>
       <!-- <h3>Result :<br /> {{apiresult}}</h3> -->
       {{apiresult}}
@@ -28,13 +31,21 @@
 
 <script>
 import axios from 'axios'
+import { Bar } from 'vue-chartjs'
+import Chart from 'chart.js'
+Chart.pluginService.register()
+// ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 export default {
-  name: 'Visual',
+  name: 'BarChart',
+  extends: Bar,
+  components: { Bar },
   data () {
     return {
       msg: 'Visual Data',
       apiresult: 'Waiting',
+      loaded: false,
+      chartData: null,
       selected: null,
       options: [
         { value: null, text: 'COMP_ID' },
@@ -45,6 +56,16 @@ export default {
         { value: 'G', text: 'G' },
         { value: 'O', text: 'O' }
       ]
+      // props: ['chartdata',
+      //   {
+      //     scales: {
+      //       yAxes: [{ ticks: { beginAtZero: true }, gridLines: { display: true } }],
+      //       xAxes: [{ gridLines: { display: false } }]
+      //     },
+      //     legend: { display: true },
+      //     responsive: true,
+      //     maintainAspectRatio: false
+      //   }]
     }
   },
   methods: {
@@ -54,9 +75,14 @@ export default {
       if (this.selected != null) {
         const {data} = await axios.post('http://localhost:3010/api/Visual/comp/', compselected)
         this.apiresult = data
+        this.loaded = true
       } else {
         this.apiresult = 'Please select COMP_ID to satisfy WHERE clause.'
+        this.loaded = false
       }
+      this.chartData = this.apiresult
+      console.log(this.loaded)
+      console.log('charData: ', this.chartData)
       // const {data} = await axios.post('http://localhost:3010/api/Visual/comp/', compselected)
       // // console.log(data)
       // this.apiresult = data
