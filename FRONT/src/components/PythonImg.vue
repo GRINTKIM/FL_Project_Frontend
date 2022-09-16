@@ -9,7 +9,7 @@
       <b-img :src="previewImageData"></b-img>
     </div><br />
     <button @click.stop="apievent()">요청</button><br /><br /><br /><br />
-    <h3>Api 요청 결과 값 : {{ apiresult }}</h3>
+    <h3>Result : {{ apiresult }}</h3>
   </div>
 </template>
 
