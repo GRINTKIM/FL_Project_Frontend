@@ -37,6 +37,12 @@
          >
            PythonImg
         </a><br /><br /><br />
+    <h2>Board</h2>
+      <a href="/#/Board"
+         target="_blank"
+         >
+           Board
+        </a><br /><br /><br />
   </div>
 </template>
 

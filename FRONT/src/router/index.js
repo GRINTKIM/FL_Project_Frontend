@@ -7,6 +7,7 @@ import Tutorial from '@/components/Tutorial'
 import JoinTest from '@/components/JoinTest'
 import Visual from '@/components/Visual'
 import PythonImg from '@/components/PythonImg'
+import Board from '@/components/Board'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/PythonImg',
       name: 'PythonImg',
       component: PythonImg
+    },
+    {
+      path: '/Board',
+      name: 'Board',
+      component: Board
     }
   ]
 })
